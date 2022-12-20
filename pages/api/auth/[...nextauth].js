@@ -2,8 +2,8 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
 export default NextAuth({
-  secret: process.env.SECRET,
-  site: process.env.NEXTAUTH_URL,
+  // secret: process.env.SECRET,
+  // site: process.env.NEXTAUTH_URL,
   providers: [
     // OAuth authentication providers
     GoogleProvider({
@@ -25,3 +25,9 @@ export default NextAuth({
     }
   }
 })
+
+
+
+
+
+
