@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 export default NextAuth({
   secret: process.env.SECRET,
+  site: process.env.NEXTAUTH_URL,
   providers: [
     // OAuth authentication providers
     GoogleProvider({
@@ -15,7 +16,7 @@ export default NextAuth({
   },
 
   callbacks: {
-  //adding more properties to session.user
+    //adding more properties to session.user
     async session({ session, token, user }) {
       session.user.username = session.user.name.split(" ").join('.').toLocaleLowerCase()
       session.user.uid = token.sub
